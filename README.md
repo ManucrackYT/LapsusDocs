@@ -24,14 +24,14 @@ Lapsus Client is a Pterodactyl client area with a unique design, thriving market
 
 ## Features
 
-* 🖌️ **Customizable Client Area.**
+* 🖌️ **Customizable Client Area**
   * Change name and logo easily
   * Customize news as you want, modify the news title, picture, description and link
-* 📂 **See your servers, all in one place.**
+* 📂 **See your servers, all in one place**
   * See which servers you have created on the Dashboard and access them with a single buttton
 * 🔑 **Discord Authentication**
   * Using Discord Oauth for a _faster_ access to your account
-* 📰 **News feed added into the Client Area: explore and add your best news.**
-* 🛒 **Buy extra resources for your server.**
+* 📰 **News feed added into the Client Area: explore and add your best news**
+* 🛒 **Buy extra resources for your server**
 * **🪙 Earn coins while you make a good coffee, you don't need to touch the device to earn coins!**
-* **❤️ Transfer your resources to friends or receive resources by your friends.**
+* **❤️ Transfer your resources to friends or receive resources by your friends**
