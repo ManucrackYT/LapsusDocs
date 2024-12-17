@@ -66,7 +66,7 @@ location /afkwspath {
   proxy_http_version 1.1;
   proxy_set_header Upgrade $http_upgrade;
   proxy_set_header Connection "upgrade";
-  proxy_pass "http://yourPterodactylorIPurl:<port>/afkwspath";
+  proxy_pass "http://yourLapsusUrl:<port>/afkwspath";
 }
     
     server_name <domain>;
@@ -77,14 +77,14 @@ ssl_certificate /etc/letsencrypt/live/<domain>/fullchain.pem;
     ssl_ciphers  HIGH:!aNULL:!MD5;
     ssl_prefer_server_ciphers on;
 location / {
-      proxy_pass http://yourPterodactylorIPurl:<port>/;
+      proxy_pass http://yourLapsusUrl:<port>/;
       proxy_buffering off;
       proxy_set_header X-Real-IP $remote_addr;
   }
 }
 ```
 
-2. Close your editor and run `systemctl restart nginx`.&#x20;
+2. Close your editor and run `sudo systemctl restart nginx`.&#x20;
 
 {% hint style="success" %}
 If you don't get an error, everything is working correctly and now you can use your custom domain! If you get an error from your shell, check you followed all steps correctly, and see the [Broken link](broken-reference "mention") section.
