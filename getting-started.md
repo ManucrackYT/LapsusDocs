@@ -35,7 +35,7 @@ layout:
 
 * ![](https://api.iconify.design/logos:ubuntu.svg) Ubuntu (18.04 or newer)
 * ![](https://api.iconify.design/logos:debian.svg) Debian (10 or newer)
-* <img src=".gitbook/assets/FreeBSD_minimalist_logo.png" alt="" data-size="line"> FreeBSD (Tested with 14)
+* ![](https://api.iconify.design/logos:freebsd.svg) FreeBSD (Tested with 14)
 
 {% hint style="danger" %}
 **Docker/Podman containers are not supported!**
