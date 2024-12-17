@@ -25,7 +25,7 @@ To change a user's plan, you will need to do the following:
 <figure><img src="../.gitbook/assets/imagen (4).png" alt=""><figcaption></figcaption></figure>
 
 * Replace `localhost:8080`  with your IP address or domain
-* Replace `693801767766458408` with the ID of the user you will change package
+* Replace `693801767766458408` with the ID of the user whose package you wish to change.
 * Replace `premium` with the name of the package (package types are listed in `settings.json`)
 
 
