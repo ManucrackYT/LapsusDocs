@@ -26,7 +26,7 @@ To change a user's plan, you will need to do the following:
 
 * Replace `localhost:8080`  with your IP address or domain
 * Replace `693801767766458408` with the ID of the user you will change package
-* Replace `package` with the name of the package (packages types are on `settings.json`)\
+* Replace `premium` with the name of the package (package types are listed in `settings.json`)
 
 
 After doing this, hit Enter and the user's plan will be changed!
