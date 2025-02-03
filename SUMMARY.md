@@ -21,4 +21,5 @@
 
 * [⁉️ Common Errors](troubleshooting/common-errors.md)
 * [💰 Changing a user's plan](troubleshooting/changing-a-users-plan.md)
+* [🔄 How the Updater works?](troubleshooting/how-updater-works.md)
 * [🔨 Fixing the 404 Error in Security](troubleshooting/fixing-the-404-error-in-security.md)
