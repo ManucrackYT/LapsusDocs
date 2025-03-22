@@ -13,7 +13,7 @@ Example config with default settings.
 {% code title="settings.json" overflow="wrap" %}
 ```json
 {
-  "version": "2.7",
+  "version": "2.8.3",
   "name": "Lapsus Client",
   "logo": {
     "url": "/assets/img/logo_background.png"
@@ -22,32 +22,9 @@ Example config with default settings.
   "timezone": "Europe/London",
   "main_web": "https://yourdomain.com",
   "discord_server": "https://discord.gg/invite/",
-  
-  "profile_json": true,
-
-  "news": {
-    "new1_type": "Recommendation",
-    "new1_title": "Try Lapsus Launcher",
-    "new1_message": "Our new project focused on Minecraft gaming, a next generation launcher to play Minecraft at another performance.",
-    "new1_img": "/assets/img/lapsus_launcher_banner.png",
-    "new1_button_text": "Try it now!",
-    "new1_button_link": "https://github.com/ManucrackYT/LapsusLauncher",
-
-    "new2_type": "Info",
-    "new2_title": "Lapsus Client has been officialy released!",
-    "new2_message": "Thanks for using Lapsus Client, report any bugs or problems at our Github.",
-    "new2_img": "/assets/img/lapsus_client_thanks.png",
-    "new2_button_text": "GitHub",
-    "new2_button_link": "https://github.com/ManucrackYT/LapsusClient"
-  },
-
-  "resources": {
-    "note": "Options: MB, GB. This is used to show user's resources.",
-    "type": "MB"
-  },
   "website": {
-    "port": 8080,
-    "secret": "changeme"
+    "port": 8000,
+    "secret": "change_this"
   },
   "pterodactyl": {
     "domain": "https://panel.yourdomain.com",
@@ -60,19 +37,31 @@ Example config with default settings.
     "cpu": "300",
     "servers": "3"
   },
+  "profile_json": true,
+  "auto_update": true,
+  "telemetry": true,
+  "news": {
+    "new1_type": "Recommendation",
+    "new1_title": "Try Lapsus Launcher",
+    "new1_message": "Our new project focused on Minecraft gaming, a next generation launcher to play Minecraft at another performance.",
+    "new1_img": "/assets/img/lapsus_launcher_banner.png",
+    "new1_button_text": "Try it now!",
+    "new1_button_link": "https://github.com/ManucrackYT/LapsusLauncher",
+    "new2_type": "Info",
+    "new2_title": "Lapsus Client has been officialy released!",
+    "new2_message": "Thanks for using Lapsus Client, report any bugs or problems at our Github.",
+    "new2_img": "/assets/img/lapsus_client_thanks.png",
+    "new2_button_text": "GitHub",
+    "new2_button_link": "https://github.com/ManucrackYT/LapsusClient"
+  },
   "database": "sqlite://database.sqlite",
   "api": {
     "client": {
-      "misc": {
-        "purger": true,
-        "getip": true
-      },
-
       "webhook": {
         "auditlogs": false
       },
       "api": {
-        "enabled": false,
+        "enabled": true,
         "code": "lapsus"
       },
       "j4r": {
@@ -96,7 +85,7 @@ Example config with default settings.
         "token": "BOT_TOKEN_HERE",
         "joinguild": {
           "_comment": "The Discord bot must be in these servers and have invite permissions. Automatic guild joining will not work unless role packages are configured correctly. You can always just set it to a random role & package so that only this works.",
-          "enabled": true,
+          "enabled": false,
           "guildid": [
             "000000000000000000"
           ]
@@ -121,7 +110,7 @@ Example config with default settings.
         "_comment": "Go to https://discord.dev/ and create an application to set these up.",
         "id": "",
         "secret": "",
-        "link": "http://localhost:8080",
+        "link": "http://localhost:8000",
         "callbackpath": "/callback",
         "prompt": true,
         "ip": {
@@ -152,7 +141,6 @@ Example config with default settings.
             "databases": 1,
             "servers": 1
           },
-
           "premium": {
             "ram": 2048,
             "disk": 10240,
@@ -170,26 +158,30 @@ Example config with default settings.
         }
       },
       "locations": {
-        "2": { "name": "Germany 🇩🇪", "city": "Node 01", "package": null }
+        "2": {
+          "name": "Germany",
+          "city": "Falkenstein",
+          "ISO": "de",
+          "package": null
+        }
       },
       "eggs": {
-       "paper": {
+        "paper": {
           "display": "Minecraft Java - Paper",
+          "icon": "https://cdn.icon-icons.com/icons2/2699/PNG/512/minecraft_logo_icon_168974.png",
           "minimum": {
             "ram": 1024,
             "disk": 1024,
             "cpu": 50
-            
           },
           "maximum": {
             "ram": null,
             "disk": null,
             "cpu": null
-            
           },
           "info": {
-            "egg": 4,
-            "docker_image": "ghcr.io/pterodactyl/yolks:java_17",
+            "egg": 2,
+            "docker_image": "ghcr.io/pterodactyl/yolks:java_21",
             "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -Dterminal.jline=false -Dterminal.ansi=true -jar {{SERVER_JARFILE}}",
             "environment": {
               "SERVER_JARFILE": "server.jar",
@@ -203,7 +195,8 @@ Example config with default settings.
           }
         },
         "bungeecord": {
-          "display": "Minecraft Java - BungeeCord",
+          "display": "Minecraft Java - Bungeecord",
+          "icon": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4563ffb7-1f11-4cf5-a889-88d54bfd62f6/d68vd8x-e6aebf2f-cc50-4dd3-b72f-fabd0b705fd4.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzQ1NjNmZmI3LTFmMTEtNGNmNS1hODg5LTg4ZDU0YmZkNjJmNlwvZDY4dmQ4eC1lNmFlYmYyZi1jYzUwLTRkZDMtYjcyZi1mYWJkMGI3MDVmZDQucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.FBWKVjYXkX-RoKXsr4jh5zw8XvHQtAVqgPkZNQKwFoU",
           "minimum": {
             "ram": 512,
             "disk": 512,
@@ -215,8 +208,8 @@ Example config with default settings.
             "cpu": null
           },
           "info": {
-            "egg": 1,
-            "docker_image": "ghcr.io/pterodactyl/yolks:java_17",
+            "egg": 3,
+            "docker_image": "ghcr.io/pterodactyl/yolks:java_21",
             "startup": "java -Xms128M -Xmx{{SERVER_MEMORY}}M -jar {{SERVER_JARFILE}}",
             "environment": {
               "SERVER_JARFILE": "bungeecord.jar",
@@ -231,6 +224,7 @@ Example config with default settings.
         },
         "bedrock": {
           "display": "Minecraft Bedrock - Vanilla",
+          "icon": "https://i.redd.it/2wibjal6iox71.png",
           "minimum": {
             "ram": 512,
             "disk": 512,
@@ -242,16 +236,12 @@ Example config with default settings.
             "cpu": null
           },
           "info": {
-            "egg": 16,
-            "docker_image": "ghcr.io/parkervcp/yolks:debian",
+            "egg": 4,
+            "docker_image": "ghcr.io/pterodactyl/yolks:java_21",
             "startup": "./bedrock_server",
             "environment": {
-              "BEDROCK_VERSION": "latest",
-              "LD_LIBRARY_PATH": ".",
-              "SERVERNAME": "A Bedrock Server",
-              "GAMEMODE": "survival",
-              "DIFFICULTY": "easy",
-              "CHEATS": "true"
+              "VANILLA_VERSION": "latest",
+              "SERVER_JARFILE": "server.jar"
             },
             "feature_limits": {
               "databases": 4,
@@ -261,6 +251,7 @@ Example config with default settings.
         },
         "nodejs": {
           "display": "Code - NodeJS",
+          "icon": "https://www.step2gen.com/WebsiteAssets/assets/images/nodejs.svg",
           "minimum": {
             "ram": 512,
             "disk": 512,
@@ -273,7 +264,7 @@ Example config with default settings.
           },
           "info": {
             "egg": 15,
-            "docker_image": "ghcr.io/parkervcp/yolks:nodejs_18",
+            "docker_image": "ghcr.io/parkervcp/yolks:nodejs_21",
             "startup": "if [[ -d .git ]] && [[ {{AUTO_UPDATE}} == \"1\" ]]; then git pull; fi; if [[ ! -z ${NODE_PACKAGES} ]]; then /usr/local/bin/npm install ${NODE_PACKAGES}; fi; if [[ ! -z ${UNNODE_PACKAGES} ]]; then /usr/local/bin/npm uninstall ${UNNODE_PACKAGES}; fi; if [ -f /home/container/package.json ]; then /usr/local/bin/npm install; fi; /usr/local/bin/node /home/container/{{BOT_JS_FILE}}",
             "environment": {
               "USER_UPLOAD": "0",
@@ -289,6 +280,7 @@ Example config with default settings.
         },
         "python": {
           "display": "Code - Python",
+          "icon": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/640px-Python.svg.png",
           "minimum": {
             "ram": 512,
             "disk": 512,
@@ -300,13 +292,13 @@ Example config with default settings.
             "cpu": null
           },
           "info": {
-            "egg": 19,
-            "docker_image": "ghcr.io/parkervcp/yolks:python_3.10",
+            "egg": 16,
+            "docker_image": "ghcr.io/parkervcp/yolks:python_3.12",
             "startup": "if [[ -d .git ]] && [[ {{AUTO_UPDATE}} == \"1\" ]]; then git pull; fi; if [[ ! -z {{PY_PACKAGES}} ]]; then pip install -U --prefix .local {{PY_PACKAGES}}; fi; if [[ -f /home/container/${REQUIREMENTS_FILE} ]]; then pip install -U --prefix .local -r ${REQUIREMENTS_FILE}; fi; /usr/local/bin/python /home/container/{{BOT_PY_FILE}}",
             "environment": {
               "USER_UPLOAD": "0",
               "AUTO_UPDATE": "0",
-              "BOT_PY_FILE": "bot.py",
+              "PY_FILE": "app.py",
               "REQUIREMENTS_FILE": "requirements.txt"
             },
             "feature_limits": {
@@ -344,6 +336,21 @@ Example config with default settings.
         }
       }
     },
+    "arcio": {
+      "enabled": true,
+      "widgetid": "widgetidhere",
+      "afk page": {
+        "_comment": "This will not effect any current arc.io sessions, and will require a restart to kick everyone out of the websocket sesison.",
+        "_comment2": "Make sure coins are enabled if you choose to enable this option!",
+        "enabled": true,
+        "_comment3": "If you change the path, you need to restart for it to take full effect.",
+        "path": "afkwspath",
+        "_comment4": "This afk page will give the users [coins variable] coins every [every variable] seconds.",
+        "every": 60,
+        "_comment5": "The coins variable is meant to not be under 1. There may be bugs if the coins variable is less than 1.",
+        "coins": 1
+      }
+    }
   },
   "whitelist": {
     "note": "This allows only specific people to be able to use the dashboard",
@@ -375,7 +382,7 @@ Example config with default settings.
         "buy cpu": true,
         "buy disk": true,
         "buy databases": true
-      }, 
+      },
       "admin": {
         "set coins": true,
         "add coins": true,
@@ -388,36 +395,20 @@ Example config with default settings.
       }
     }
   },
-  "antivpn": {
-    "note": "For antivpn to work, generate an apikey on https://proxycheck.io/. If you put no key, Lapsus Client will disable antivpn automatically.",
-    "status": false,
-    "APIKey": "Proxycheck APIKey",
-    "whitelistedIPs": ["IP address"]
+  "linkvertise": {
+    "userid": "000000",
+    "coins": 1
   },
-
-  "beta":{
-    "notification": "This is a beta feature and can contain some bugs.",
-
-
-    
-    "note": "This isn't working yet",
-    
-    "location1_enabled": false,
-    "location1_name": "Germany",
-    "location1_city": "Falkenstein",
-    "location1_flag": "https://flagcdn.com/h20/de.png",
-
-    "location2_enabled": true,
-    "location2_name": "Netherlands",
-    "location2_city": "Eygelshoven",
-    "location2_flag": "https://flagcdn.com/h20/nl.png",
-
-    "location3_enabled": false,
-    "location3_name": "Finland",
-    "location3_city": "Helsinki",
-    "location3_flag": "https://flagcdn.com/h20/fi.png"
+  "antivpn": {
+    "note": "For antivpn to work, generate an apikey on https://proxycheck.io/. If you put no key, Lapsus Client will disable antivpn automatically. This won't avoid all VPN, just known ones.",
+    "status": true,
+    "APIKey": "Proxycheck APIKey",
+    "whitelistedIPs": [
+      "IP address"
+    ]
   }
 }
+
 ```
 {% endcode %}
 

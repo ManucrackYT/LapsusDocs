@@ -14,7 +14,7 @@ layout:
 
 # 💬 Configuring Discord
 
-## 🔐 Login
+🔐 Login
 
 Head on over to the [Discord Dev Portal](https://discord.com/developers/applications) and create a new application.
 
@@ -38,7 +38,7 @@ Next copy your `Client ID` and `Client Secret`.
 
 Configure everything in `config.json` now:
 
-{% code title="config.json" %}
+{% code title="settings.json" %}
 ```json
       "oauth2": {
         "_comment": "Go to https://discord.dev/ and create an application to set these up.",
@@ -51,4 +51,35 @@ Configure everything in `config.json` now:
 
 ## 💰 J4R (Join 4 Rewards)
 
-:construction:**WIP** :construction:
+This method works with Discord which checks if an user has joined a server listed in settings.json\
+
+
+```json
+      "j4r": {
+        "enabled": true,
+        "ads": [
+          {
+            "name": "Example server 1",
+            "invite": "https://discord.gg/example",
+            "id": "000000000000000000",
+            "coins": 25
+          },
+          {
+            "name": "Example server 2",
+            "invite": "https://discord.gg/example",
+            "id": "000000000000000000",
+            "coins": 200
+          }
+        ]
+      },
+```
+
+`"name"`: Name of the server listed in J4R. It can be the name you want not neccessary the server's name\
+\
+`"invite"`: Here goes the Discord invitation to the server to add to J4R. Make sure you create a permanent invite\
+\
+`"id"`: The server id you want to add here\
+\
+`"coins"`: Number of coins that users will get once they join to the server
+
+You can create as many J4Rs as you want. By default, we add two slots but you can add infinite slots

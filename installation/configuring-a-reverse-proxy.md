@@ -36,17 +36,23 @@ Ensure the subdomain is _gray-clouded_ (not proxied). This is because you will n
 
 2. Login to your VPS using SSH and run the following commands:
 
-<pre class="language-bash"><code class="lang-bash"><strong>export DOMAIN="&#x3C;your domain from step 1>"
+<pre class="language-bash"><code class="lang-bash"><strong>export DOMAIN="&#x3C;your subdomain from step 1>"
 </strong>apt install nginx &#x26;&#x26; apt install certbot &#x26;&#x26;
 ufw allow 80 &#x26;&#x26; # or some other fiewall
 ufw allow 443 &#x26;&#x26;
 certbot certonly -d $DOMAIN 
 </code></pre>
 
+Alternative method to request a certificate:
+
+```bash
+certbot certonly -d <subdomain>
+```
+
 Select option 1 (Nginx Webserver) and follow the steps you will see.\
 `nano /etc/nginx/sites-enabled/lapsusclient.conf`
 
-3. Paste the following code, **replacing `<domain>` with your domain and `<port>` with your port (default 8080).**
+3. Paste the following code, **replacing `<domain>` with your domain and `<port>` with your port (default 8000).**
 
 ```nginx
 server {
@@ -81,5 +87,5 @@ location / {
 2. Close your editor and run `sudo systemctl restart nginx`.
 
 {% hint style="success" %}
-If you don't get an error, everything is working correctly and now you can use your custom domain! If you get an error from your shell, check you followed all steps correctly, and see the [broken-reference](broken-reference/ "mention") section.
+If you don't get an error, everything is working correctly and now you can use your custom domain! If you get an error from your shell, check you followed all steps correctly.
 {% endhint %}
